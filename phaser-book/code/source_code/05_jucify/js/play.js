@@ -1,4 +1,14 @@
 class Play {
+  preload() {
+    this.load.image('coin', 'assets/coin.png');
+    this.load.image('enemy', 'assets/enemy.png');
+    this.load.image('wallV', 'assets/wallVertical.png');
+    this.load.image('wallH', 'assets/wallHorizontal.png');
+    this.load.audio('jump', ['assets/jump.ogg', 'assets/jump.mp3']);
+    this.load.audio('coin', ['assets/coin.ogg', 'assets/coin.mp3']);
+    this.load.audio('dead', ['assets/dead.ogg', 'assets/dead.mp3']);
+    this.load.image('pixel', 'assets/pixel.png')
+  }
   create() {
     this.player = this.physics.add.sprite(250, 170, 'player');
     this.player.body.gravity.y = 500;
