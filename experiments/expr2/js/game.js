@@ -5,7 +5,7 @@ let game = new Phaser.Game({
   physics: {
     default: 'matter',
     matter: {
-      debug: true,
+      debug: false,
       gravity: {
         y: 0.3
       },

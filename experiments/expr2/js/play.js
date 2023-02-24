@@ -3,18 +3,20 @@ class Play {
     var ball = this.matter.add.image(x,y, 'ball', {
 
     });
+    ball.setCircle(10);
     ball.setFriction(0.001, 0.001, 0.0)
-    ball.setBounce(1.0);
-    //ball.setCircle(10);
+    ball.setBounce(0.8);
     ball.setMass(1.0);
+
+    return ball;
   }
 
   makePeg(x,y) {
     var peg = this.matter.add.image(x,y, 'ball', {
     });
+    peg.setCircle(10);
     peg.setFriction(0.000, 0.00, 0.0)
-    //peg.setBounce(0.99);
-    //peg.setCircle(10);
+    peg.setBounce(0.8);
     peg.setStatic(true);
     peg.setScale(1.75);
     peg.setAngle(45);
@@ -34,13 +36,36 @@ class Play {
 
   create() {
   	// Initialize the game
-    this.makeBall(305,10);
+    this.balls = [];
+    var count = 100;
+    var distance = 600 / count;
+    var offset = distance / 2;
+    for (let i = 0; i < count; i++) {
+        const ball = this.makeBall(offset + (i * distance), Phaser.Math.RND.between(0,10));
+        this.balls.push(ball);
+    }
+
     this.makeBoard()
+    this.matter.add.rectangle(-10,400,20,800,{
+        isStatic: true
+    });
+    this.matter.add.rectangle(610,400,20,800,{
+      isStatic: true
+    });
 
   }
 
   update() {
   	// Update the game
+    this.balls.forEach((ball) => {
+      if (ball.y > 810) {
+        //ball.body.velocity.x = this.pickSpeed();
+        //ball.body.bounce.x = this.pickBounce();
+        //ball.body.bounce.y = this.pickBounce();
+        ball.x = Phaser.Math.RND.between(0,600);
+        ball.y = 0;
+      }
+    });
   }
 
   // Add any other method here
