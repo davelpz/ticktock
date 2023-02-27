@@ -1,7 +1,10 @@
 class Menu {
   create() {
-  	// Display the game's name
-  	let nameLabel = this.add.text(500, 160, 'Game Name', { font: '70px Arial', fill: '#fff' });
+    const width = this.game.config.width;
+    const height = this.game.config.height;
+
+    // Display the game's name
+    let nameLabel = this.add.text(width/2, height/3, 'Game Name', { font: '70px Arial', fill: '#fff' });
     nameLabel.setOrigin(0.5, 0.5);
 
     // Display how to start the game
@@ -11,7 +14,7 @@ class Menu {
     } else {
       startText = 'touch the screen to start';
     }
-    let startLabel = this.add.text(500, 520, startText, { font: '25px Arial', fill: '#fff' });
+    let startLabel = this.add.text(width/2, 2*(height/3), startText, { font: '25px Arial', fill: '#fff' });
     startLabel.setOrigin(0.5, 0.5);
 
     // Store the up arrow key

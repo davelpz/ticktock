@@ -1,5 +1,8 @@
 class Load {
   preload() {
+    const width = this.game.config.width;
+    const height = this.game.config.height;
+
     // Load all assets here
     // this.load.image('sprite', ‘assets/sprite.png’);
     // this.load.spritesheet('sprite', 'assets/sprite.png', { frameWidth: 20, frameHeight: 20 });

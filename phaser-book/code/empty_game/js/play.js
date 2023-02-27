@@ -1,6 +1,9 @@
 class Play {
   create() {
-  	// Initialize the game
+    const width = this.game.config.width;
+    const height = this.game.config.height;
+
+    // Initialize the game
   }
 
   update() {

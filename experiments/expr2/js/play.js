@@ -4,8 +4,8 @@ class Play {
 
     });
     ball.setCircle(10);
-    ball.setFriction(0.001, 0.001, 0.0)
-    ball.setBounce(0.8);
+    ball.setFriction(0.5, 0.001, 0.0)
+    ball.setBounce(0.75);
     ball.setMass(1.0);
 
     return ball;
@@ -14,7 +14,7 @@ class Play {
   makePeg(x,y) {
     var peg = this.matter.add.image(x,y, 'peg', {
     });
-    peg.setCircle(10);
+    peg.setCircle(17.5);
     peg.setFriction(0.000, 0.00, 0.0)
     peg.setBounce(0.8);
     peg.setStatic(true);
@@ -45,10 +45,12 @@ class Play {
 
     this.makeBoard()
     this.matter.add.rectangle(-10,400,20,800,{
-        isStatic: true
+      isStatic: true,
+      restitution: 0.8
     });
     this.matter.add.rectangle(610,400,20,800,{
-      isStatic: true
+      isStatic: true,
+      restitution: 0.8
     });
 
   }
