@@ -9,7 +9,7 @@ class Ball {
         ball.setCircle(this.radius);
         ball.setFriction(0.5, 0.001, 0.0)
         ball.setBounce(Phaser.Math.RND.pick([.50, .55, .60, .65, .70, .75, .80, .85, .90, .95]));
-        ball.setMass(1.0);
+        ball.setMass(Phaser.Math.RND.pick([.10, .20, .30, .40, .50, .60, .70, .80, .90, 1.0]));
 
         this.game_object = ball;
     }
@@ -27,7 +27,8 @@ class Ball {
 }
 
 class Play {
-
+    static width = 0;
+    static height = 0;
     constructor() {
         console.log(this);
     }
