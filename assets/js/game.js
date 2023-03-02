@@ -1,7 +1,7 @@
 let game = new Phaser.Game({
   width: 800,
   height: 600,
-  backgroundColor: '#3498db', 
+  backgroundColor: '#2488cb',
   physics: { default: 'arcade' },
   parent: 'phaser_div',
   scale: {

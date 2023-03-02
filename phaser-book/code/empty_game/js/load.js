@@ -9,7 +9,7 @@ class Load {
     // this.load.audio('sound', ['assets/sound.ogg', 'assets/sound.ogg.mp3']);
 
     // Loading label
-    this.loadLabel = this.add.text(500, 240, 'loading\n0%', { font: '30px Arial', fill: '#fff', align: 'center' });
+    this.loadLabel = this.add.text(width/2, height/2, 'loading\n0%', { font: '30px Arial', fill: '#fff', align: 'center' });
     this.loadLabel.setOrigin(0.5, 0.5);
     this.load.on('progress', this.progress, this);
   }

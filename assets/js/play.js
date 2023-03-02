@@ -1,7 +1,10 @@
 class Play {
   create() {
-  	// Initialize the game
-    this.add.image(400, 300, 'sky');
+    const width = this.game.config.width;
+    const height = this.game.config.height;
+
+    // Initialize the game
+    this.add.image(width/2, height/2, 'sky');
 
     var particles = this.add.particles('red');
 
@@ -11,7 +14,7 @@ class Play {
       blendMode: 'ADD'
     });
 
-    var logo = this.physics.add.image(400, 100, 'logo');
+    var logo = this.physics.add.image(width/2, height/3, 'logo');
 
     logo.setVelocity(100, 200);
     logo.setBounce(1, 1);
