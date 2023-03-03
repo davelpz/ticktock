@@ -1,6 +1,6 @@
 let game = new Phaser.Game({
-  width: 1000,
-  height: 680, 
+  width: 600,
+  height: 1066,
   backgroundColor: '#3498db', 
   physics: { default: 'arcade' },
   parent: 'game', 
@@ -8,12 +8,12 @@ let game = new Phaser.Game({
     mode: Phaser.Scale.FIT,
     autoCenter: Phaser.Scale.CENTER_BOTH,
     min: {
-      width: 250,
-      height: 170,
+      width: 150,
+      height: 266,
     },
     max: {
-      width: 1000,
-      height: 680,
+      width: 600,
+      height: 1066,
     },
   },
 });
